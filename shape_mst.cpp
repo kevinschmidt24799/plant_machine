@@ -51,7 +51,12 @@ std::vector<std::pair<Shape const *, Shape const *>> ShapeMST::get_mst(std::vect
     {
         for(auto v2 = v1+1; v2 != vertices.end(); ++v2)
         {
-            edges.emplace_back(&*v1, &*v2);
+            if(v1->me_->y_ >= v2->me_->y_)
+            {
+                edges.emplace_back(&*v1, &*v2);
+            } else {
+                edges.emplace_back(&*v2, &*v1);
+            }
         }
     }
 

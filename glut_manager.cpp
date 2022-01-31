@@ -31,6 +31,8 @@ void GlutManager::start(int * argc, char **argv)
     glDepthFunc(GL_LESS);
     glEnable(GL_DEPTH_TEST);
     glClearDepth(1.0f);
+    glClearColor(dr_, dg_, db_, 1);
+
 
     glutMainLoop();
 }
@@ -39,7 +41,6 @@ void GlutManager::start(int * argc, char **argv)
 void GlutManager::display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(60, static_cast<float>(glutGet(GLUT_WINDOW_WIDTH))/glutGet(GLUT_WINDOW_HEIGHT),  0.01, 100);

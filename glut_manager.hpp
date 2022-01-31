@@ -18,6 +18,7 @@ class GlutManager
     bool left = false;
 
 public:
+    float dr_=0, dg_=0, db_=0;
     void start(int * argc, char **argv);
     virtual void draw();
 
