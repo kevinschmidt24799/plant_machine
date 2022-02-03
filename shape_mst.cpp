@@ -66,8 +66,6 @@ std::vector<std::pair<Shape const *, Shape const *>> ShapeMST::get_mst(std::vect
 
     //std::cout << "Edges:\n"; for (auto const &e:edges) std::cout << e << "\n";
 
-
-
     std::vector<std::pair<Shape const *, Shape const *>> output;
 
     for(int edge_count = 0; edge_count < shapes.size()-1; )
@@ -82,7 +80,7 @@ std::vector<std::pair<Shape const *, Shape const *>> ShapeMST::get_mst(std::vect
             continue;
         }
         //std::cout << "adding edge "<< e <<'\n';
-        output.push_back({e.first->me_, e.second->me_});
+        output.emplace_back(e.first->me_, e.second->me_);
         e.second->get_head()->parent_ = (e.first);
         ++edge_count;
     }

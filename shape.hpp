@@ -4,6 +4,7 @@
 
 #ifndef TREETEST_SHAPE_HPP
 #define TREETEST_SHAPE_HPP
+#include <vector>
 
 struct Shape
 {
@@ -17,5 +18,11 @@ struct Shape
     virtual ~Shape() {};
 };
 
+struct ConnectedShape : public Shape
+{
+    std::vector<ConnectedShape *> connections_;
+    ConnectedShape(float x, float y, float z);
+    ConnectedShape(float x, float y, float z, float r, float g, float b);
+};
 
 #endif //TREETEST_SHAPE_HPP

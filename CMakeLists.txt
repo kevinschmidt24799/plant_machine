@@ -16,6 +16,6 @@ target_link_libraries(glut_manager PUBLIC ${GLUT} ${OPENGL_LIBRARIES})
 
 
 add_executable(treetest main.cpp
-        rect.cpp rect.hpp shape_mst.cpp shape_mst.hpp distance_from_stem.cpp distance_from_stem.hpp)
+        rect.cpp rect.hpp shape_mst.cpp shape_mst.hpp leaf.cpp leaf.hpp branch.cpp branch.hpp floor.cpp floor.hpp)
 
 target_link_libraries(treetest glut_manager)

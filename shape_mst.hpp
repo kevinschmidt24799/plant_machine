@@ -10,6 +10,7 @@
 #include <vector>
 #include <iostream>
 
+
 class Vertex
 {
 public:

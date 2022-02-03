@@ -9,3 +9,11 @@ Shape::Shape(float x, float y, float z)
 
 Shape::Shape(float x, float y, float z, float r, float g, float b)
 :x_{x}, y_{y}, z_{z}, r_{r}, g_{g}, b_{b}{}
+
+ConnectedShape::ConnectedShape(float x, float y, float z)
+:Shape{x,y,z}{}
+
+ConnectedShape::ConnectedShape(float x, float y, float z, float r, float g, float b)
+:Shape{x, y, z, r, g, b}{}
+
+
