@@ -17,3 +17,17 @@ ConnectedShape::ConnectedShape(float x, float y, float z, float r, float g, floa
 :Shape{x, y, z, r, g, b}{}
 
 
+void generate_neighbors(std::vector<std::pair<Shape *, Shape*>> & edges)
+{
+    for(auto & e : edges)
+    {
+        auto s1  = dynamic_cast<ConnectedShape *>(e.first);
+        auto s2  = dynamic_cast<ConnectedShape *>(e.second);
+        if(s1 && s2)
+        {
+            s1->connections_.push_back(s2);
+            s2->connections_.push_back(s1);
+        }
+    }
+}
+

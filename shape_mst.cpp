@@ -36,10 +36,10 @@ std::ostream &operator<<(std::ostream &os, Edge const &edge)
     return os;
 }
 
-std::vector<std::pair<Shape const *, Shape const *>> ShapeMST::get_mst(std::vector<std::unique_ptr<Shape>> const & shapes)
+std::vector<std::pair<Shape *, Shape *>> ShapeMST::get_mst(std::vector<std::unique_ptr<Shape>> & shapes)
 {
     std::vector<Vertex> vertices;
-    for (auto const & shape : shapes)
+    for (auto & shape : shapes)
     {
         vertices.emplace_back(shape.get());
     }
@@ -66,7 +66,7 @@ std::vector<std::pair<Shape const *, Shape const *>> ShapeMST::get_mst(std::vect
 
     //std::cout << "Edges:\n"; for (auto const &e:edges) std::cout << e << "\n";
 
-    std::vector<std::pair<Shape const *, Shape const *>> output;
+    std::vector<std::pair<Shape *, Shape *>> output;
 
     for(int edge_count = 0; edge_count < shapes.size()-1; )
     {

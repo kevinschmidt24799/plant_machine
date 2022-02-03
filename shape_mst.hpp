@@ -14,11 +14,11 @@
 class Vertex
 {
 public:
-    Vertex(Shape const * shape) : me_{shape}, parent_{this}
+    Vertex(Shape * shape) : me_{shape}, parent_{this}
     {
         parent_ = this;
     }
-    Vertex &operator=(Vertex const &other) = delete;
+    Vertex &operator=(Vertex &other) = delete;
     Vertex(Vertex const & other)
     {
         //std::cout << "copying Vertex\n";
@@ -26,7 +26,7 @@ public:
         parent_ = this;
     }
 
-    Shape const * me_;
+    Shape * me_;
     Vertex * parent_;
     Vertex * get_head();
 
@@ -40,7 +40,7 @@ class ShapeMST
 {
 public:
     virtual float cost(Shape const & s1, Shape const & s2);
-    std::vector<std::pair<Shape const *, Shape const *>> get_mst(std::vector<std::unique_ptr<Shape>> const & shapes);
+    std::vector<std::pair<Shape *, Shape *>> get_mst(std::vector<std::unique_ptr<Shape>> & shapes);
 };
 
 

@@ -25,4 +25,6 @@ struct ConnectedShape : public Shape
     ConnectedShape(float x, float y, float z, float r, float g, float b);
 };
 
+void generate_neighbors(std::vector<std::pair<Shape *, Shape*>> & edges);
+
 #endif //TREETEST_SHAPE_HPP

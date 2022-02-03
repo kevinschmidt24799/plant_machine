@@ -13,6 +13,7 @@ class Leaf : public ConnectedShape
 public:
 
     float radius_;
+    int weight_{1};
     virtual ~Leaf(){};
     Leaf(float x, float y, float z, float r, float g, float b, float radius)
             : ConnectedShape{x, y, z, r, g, b}, radius_{radius}{};
@@ -24,6 +25,7 @@ public:
         glutSolidSphere(radius_, 20, 20);
         glPopMatrix();
     }
+    int set_weight(Leaf * parent = nullptr);
 };
 
 
